@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lung Cancer predictor Model</title>
+
+</head>
+<body>
+    <div style="color:black;" class="container">
+        <h2 class='container-heading'><span class="heading_font">Lung Cancer Prediction</span></h2>
+    </div>
+
+    <div style="color:black;" class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <br>
+            <br>
+            <h3>GENDER</h3>
+            <input id="first" name="GENDER" placeholder="Male=1, Female=2" required="required">
+            <br>
+            <h3>AGE</h3>
+            <input id="second" name="AGE" placeholder="Age" required="required">
+            <br>
+            <h3>SMOKING</h3>
+            <input id="third" name="SMOKING" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>YELLOW_FINGERS</h3>
+            <input id="fourth" name="YELLOW_FINGERS" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>ANXIETY</h3>
+            <input id="fifth" name="ANXIETY" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>PEER_PRESSURE</h3>
+            <input id="sixth" name="PEER_PRESSURE" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>CHRONIC_DISEASE</h3>
+            <input id="seventh" name="CHRONIC_DISEASE" placeholder="Yes = 1, No = 2" required="required"><br>
+            <h3>FATIGUE</h3>
+            <input id="eight" name="FATIGUE" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>ALLERGY</h3>
+            <input id="nineth" name="ALLERGY" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>WHEEZING</h3>
+            <input id="tenth" name="WHEEZING" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>ALCOHOL_CONSUMING</h3>
+            <input id="eleventh" name="ALCOHOL_CONSUMING" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>COUGHING</h3>
+            <input id="twelveth" name="COUGHING" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>SHORTNESS_OF_BREATH</h3>
+            <input id="thirteenth" name="SHORTNESS_OF_BREATH" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>SWALLOWING_DIFFICULTY</h3>
+            <input id="fourteenth" name="SWALLOWING_DIFFICULTY" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>CHEST_PAIN</h3>
+            <input id="fifteenth" name="CHEST_PAIN" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <h3>LUNG_CANCER</h3>
+            <input id="sixteenth" name="LUNG_CANCER" placeholder="Yes = 1, No = 2" required="required">
+            <br>
+            <br>
+            <br>
+            <button id="sub" type="submit ">Submit</button>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </form>
+    </div>
+
+
+
+
+<style>
+
+body
+{
+
+height: 10%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+}
+
+/* Color */
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* Heading Font */
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: #black;
+	font-family: 'Pacifico', cursive;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+
+
+/* Box */
+        #first {
+            border-radius: 14px;
+            height: 30px;
+            width: 260px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #seventh {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #eight {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #nineth{
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #tenth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #eleventh{
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #twelveth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #thirteenth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fourteenth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fifteenth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sixteenth {
+            border-radius: 14px;
+            height: 25px;
+            width: 260px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+
+
+/* Submit Button */
+#sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</style>
+
+
+</body>
+
+</html>
+
+
